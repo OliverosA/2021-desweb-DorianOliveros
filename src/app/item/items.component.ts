@@ -5,13 +5,20 @@ import { ItemService } from './item.service'
 @Component({
   selector: 'ns-items',
   templateUrl: './items.component.html',
+  styleUrls: ["./items.component.css"],
 })
 export class ItemsComponent implements OnInit {
-  
+  items: Object;
 
-  constructor(private itemService: ItemService) {}
+  constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
-    
+    this.itemService.getItems().subscribe(
+      response => {
+        this.items = response.photos;
+      },
+      error => console.log(error)
+    );
+
   }
 }
