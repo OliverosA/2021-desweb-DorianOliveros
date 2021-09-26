@@ -1,11 +1,22 @@
-
-<ActionBar title="My App"> </ActionBar>
+<ActionBar backgroundColor="#000000">
+  <StackLayout orientation="horizontal">
+    <Image id="nasaImagen" src="https://api.nasa.gov/assets/img/favicons/favicon-192.png" verticalAlignment="center">
+    </Image>
+    <label text=" Pictures API" fontSize="20" color=white verticalAlignment="center" font-family="Bold"></label>
+  </StackLayout>
+</ActionBar>
 
 <GridLayout>
   <ListView [items]="items">
     <ng-template let-item="item">
-      <StackLayout">
-        <Label [text]="item.name"></Label>
+      <StackLayout>
+        <Label id="fechaTierra" [text]="'Fecha En La Tierra: '+item.earth_date"></Label>
+        <Image id="imagenApi" [src]="item.img_src.replace('http','https')"></Image>
+        <Label class="itemsLabels" [text]="'ID De Camara: '+item.camera.id"></Label>
+        <Label class="itemsLabels" [text]="'Nombre De Camara: '+item.camera.full_name"></Label>
+        <Label class="itemsLabels" [text]="'ID De Rover: '+item.camera.rover_id"></Label>
+        <Label class="itemsLabels" [text]="'Nombre Del Rover: '+item.rover.name"></Label>
+        <Label class="itemsLabels" [text]="'Status Del Rover: '+item.rover.status"></Label>
       </StackLayout>
     </ng-template>
   </ListView>
