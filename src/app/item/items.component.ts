@@ -16,6 +16,7 @@ export class ItemsComponent implements OnInit {
     this.itemService.getItems().subscribe(
       response => {
         this.items = response.photos;
+        //console.dir(response);
       },
       error => console.log(error)
     );

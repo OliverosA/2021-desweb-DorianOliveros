@@ -8,7 +8,7 @@ export class ItemService {
   constructor(private http: HttpClient){}
   
   getItems(){
-    return this.http.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=DEMO_KEY");
+    return this.http.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=zU7ggSxhlcOxFHx1sH0vxjeSOf3CocBCfTanoFUq");
   }
 
 }
